@@ -21,11 +21,6 @@ class PettyTemplateEngine {
     return $result;
   }
   
-  /*public function IncludeRendered(){
-    $result = $this->Render();
-    eval("?>" . $result);
-  }*/
-  
   public static function RenderFile($templatefilename, $dictionary){
     $engine = new PettyTemplateEngine();
     $engine->AddDictionary($dictionary);
@@ -38,13 +33,6 @@ class PettyTemplateEngine {
     $engine->Template = $template;
     return $engine->Render();
   }
-  
-  /*public static function IncludeRenderedFile($templatefilename, $dictionary){
-    $engine = new PettyTemplateEngine();
-    $engine->AddDictionary($dictionary);
-    $engine->Template = file_get_contents($templatefilename);
-    $engine->IncludeRendered();
-  }*/
   
   private function replace_names($text){
     $this->names_filled = false;
@@ -82,7 +70,6 @@ class PettyTemplateEngine {
     }
     return '';
   }
-  
  
 }
 
